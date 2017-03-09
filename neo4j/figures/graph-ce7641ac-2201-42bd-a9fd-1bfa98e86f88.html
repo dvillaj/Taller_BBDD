@@ -1,0 +1,44 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <div id="ce7641ac-2201-42bd-a9fd-1bfa98e86f88"></div>
+    <script type="text/javascript">
+      var nodes = [{"title": "{u'calories': 9000, u'name': u'Mountain Dew'}", "group": "Drink", "id": 21, "label": "Mountain Dew"}, {"title": "{u'age': 20, u'name': u'Drew'}", "group": "Person", "id": 18, "label": "Drew"}, {"title": "{u'calories': 0, u'name': u'Coke Zero'}", "group": "Drink", "id": 19, "label": "Coke Zero"}, {"title": "{u'age': 24, u'name': u'Nicole'}", "group": "Person", "id": 22, "label": "Nicole"}, {"title": "{u'name': u'Pepsi'}", "group": "Manufacturer", "id": 20, "label": "Pepsi"}, {"title": "{u'name': u'Coca Cola'}", "group": "Manufacturer", "id": 23, "label": "Coca Cola"}];
+      var edges = [{"to": 21, "from": 18, "label": "LIKES"}, {"to": 21, "from": 22, "label": "LIKES"}, {"to": 19, "from": 22, "label": "LIKES"}, {"to": 21, "from": 20, "label": "MAKES"}, {"to": 19, "from": 23, "label": "MAKES"}];
+      var container = document.getElementById("ce7641ac-2201-42bd-a9fd-1bfa98e86f88");
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: false
+          }
+      };
+      var network = new vis.Network(container, data, options);
+    </script>
+    </body>
+    </html>
+    

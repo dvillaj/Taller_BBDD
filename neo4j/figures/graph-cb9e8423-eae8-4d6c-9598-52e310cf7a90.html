@@ -1,0 +1,44 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <div id="cb9e8423-eae8-4d6c-9598-52e310cf7a90"></div>
+    <script type="text/javascript">
+      var nodes = [{"title": "{u'name': u'Pepsi'}", "group": "Manufacturer", "id": 20, "label": "Pepsi"}, {"title": "{u'age': 20, u'name': u'Drew'}", "group": "Person", "id": 18, "label": "Drew"}, {"title": "{u'calories': 0, u'name': u'Coke Zero'}", "group": "Drink", "id": 19, "label": "Coke Zero"}, {"title": "{u'age': 24, u'name': u'Nicole'}", "group": "Person", "id": 22, "label": "Nicole"}, {"title": "{u'name': u'Coca Cola'}", "group": "Manufacturer", "id": 23, "label": "Coca Cola"}, {"title": "{u'calories': 9000, u'name': u'Mountain Dew'}", "group": "Drink", "id": 21, "label": "Mountain Dew"}];
+      var edges = [];
+      var container = document.getElementById("cb9e8423-eae8-4d6c-9598-52e310cf7a90");
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: false
+          }
+      };
+      var network = new vis.Network(container, data, options);
+    </script>
+    </body>
+    </html>
+    
