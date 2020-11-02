@@ -9,4 +9,4 @@ El material de la clase consiste en máquina virtual con todo el software preins
 
 ## Máquina Virtual
 
-La máquina virtual necesaria para realizar las prácticas se puede encontrar en https://github.com/dvillaj/NoSQL-box
+La máquina virtual necesaria para realizar las prácticas se puede encontrar en [NoSQL-box](https://github.com/dvillaj/NoSQL-box)
