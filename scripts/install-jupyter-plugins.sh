@@ -5,6 +5,8 @@ if [ ! -d ~/notebooks/Taller_BBDD ]; then
     mv ~/notebooks ~/notebooks_old
     mkdir ~/notebooks
     mv ~/notebooks_old ~/notebooks/Taller_BBDD
+
+    rm -f /home/learner/notebooks/.install
 fi
 
 # Installing Node 10
