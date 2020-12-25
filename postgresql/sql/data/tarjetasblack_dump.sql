@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: actividad; Type: TABLE; Schema: public; Owner: learner
+-- Name: actividad; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.actividad (
@@ -30,10 +30,10 @@ CREATE TABLE public.actividad (
 );
 
 
-ALTER TABLE public.actividad OWNER TO learner;
+ALTER TABLE public.actividad OWNER TO postgres;
 
 --
--- Name: comercio; Type: TABLE; Schema: public; Owner: learner
+-- Name: comercio; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.comercio (
@@ -44,10 +44,10 @@ CREATE TABLE public.comercio (
 );
 
 
-ALTER TABLE public.comercio OWNER TO learner;
+ALTER TABLE public.comercio OWNER TO postgres;
 
 --
--- Name: consejero; Type: TABLE; Schema: public; Owner: learner
+-- Name: consejero; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.consejero (
@@ -58,10 +58,10 @@ CREATE TABLE public.consejero (
 );
 
 
-ALTER TABLE public.consejero OWNER TO learner;
+ALTER TABLE public.consejero OWNER TO postgres;
 
 --
--- Name: movimiento; Type: TABLE; Schema: public; Owner: learner
+-- Name: movimiento; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.movimiento (
@@ -75,10 +75,10 @@ CREATE TABLE public.movimiento (
 );
 
 
-ALTER TABLE public.movimiento OWNER TO learner;
+ALTER TABLE public.movimiento OWNER TO postgres;
 
 --
--- Data for Name: actividad; Type: TABLE DATA; Schema: public; Owner: learner
+-- Data for Name: actividad; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.actividad (id_actividad, actividad) FROM stdin;
@@ -122,7 +122,7 @@ COPY public.actividad (id_actividad, actividad) FROM stdin;
 
 
 --
--- Data for Name: comercio; Type: TABLE DATA; Schema: public; Owner: learner
+-- Data for Name: comercio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.comercio (id_comercio, comercio, actividad_completa, id_actividad) FROM stdin;
@@ -13938,7 +13938,7 @@ COPY public.comercio (id_comercio, comercio, actividad_completa, id_actividad) F
 
 
 --
--- Data for Name: consejero; Type: TABLE DATA; Schema: public; Owner: learner
+-- Data for Name: consejero; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.consejero (id_consejero, nombre, funcion, organizacion) FROM stdin;
@@ -14029,7 +14029,7 @@ COPY public.consejero (id_consejero, nombre, funcion, organizacion) FROM stdin;
 
 
 --
--- Data for Name: movimiento; Type: TABLE DATA; Schema: public; Owner: learner
+-- Data for Name: movimiento; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.movimiento (id_movimiento, fecha, hora, minuto, importe, id_consejero, id_comercio) FROM stdin;
@@ -90275,7 +90275,7 @@ COPY public.movimiento (id_movimiento, fecha, hora, minuto, importe, id_consejer
 
 
 --
--- Name: actividad pk_actividad; Type: CONSTRAINT; Schema: public; Owner: learner
+-- Name: actividad pk_actividad; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.actividad
@@ -90283,7 +90283,7 @@ ALTER TABLE ONLY public.actividad
 
 
 --
--- Name: comercio pk_comercio; Type: CONSTRAINT; Schema: public; Owner: learner
+-- Name: comercio pk_comercio; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comercio
@@ -90291,7 +90291,7 @@ ALTER TABLE ONLY public.comercio
 
 
 --
--- Name: consejero pk_consejero; Type: CONSTRAINT; Schema: public; Owner: learner
+-- Name: consejero pk_consejero; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.consejero
@@ -90299,7 +90299,7 @@ ALTER TABLE ONLY public.consejero
 
 
 --
--- Name: movimiento pk_movimiento; Type: CONSTRAINT; Schema: public; Owner: learner
+-- Name: movimiento pk_movimiento; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movimiento
@@ -90307,7 +90307,7 @@ ALTER TABLE ONLY public.movimiento
 
 
 --
--- Name: comercio comercio_id_actividad_fkey; Type: FK CONSTRAINT; Schema: public; Owner: learner
+-- Name: comercio comercio_id_actividad_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comercio
@@ -90315,7 +90315,7 @@ ALTER TABLE ONLY public.comercio
 
 
 --
--- Name: movimiento movimiento_id_comercio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: learner
+-- Name: movimiento movimiento_id_comercio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movimiento
@@ -90323,7 +90323,7 @@ ALTER TABLE ONLY public.movimiento
 
 
 --
--- Name: movimiento movimiento_id_consejero_fkey; Type: FK CONSTRAINT; Schema: public; Owner: learner
+-- Name: movimiento movimiento_id_consejero_fkey; Type: FK CONSTRAINT; Schema: public; Owner: leapostgresrner
 --
 
 ALTER TABLE ONLY public.movimiento
