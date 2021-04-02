@@ -59,16 +59,26 @@ def vis_network(nodes, edges, physics=False):
 
     return IFrame(filename, width="100%", height="400")
 
-def draw(graph, options, physics=False, limit=100):
-    # The options argument should be a dictionary of node labels and property keys; it determines which property
-    # is displayed for the node label. For example, in the movie graph, options = {"Movie": "title", "Person": "name"}.
-    # Omitting a node label from the options dict will leave the node unlabeled in the visualization.
-    # Setting physics = True makes the nodes bounce around when you touch them!
+
+def draw(graph, options, physics=True, limit=100):
+    """
+    The options argument should be a dictionary of node labels and property keys; it determines which property
+    is displayed for the node label. For example, in the movie graph, options = {"Movie": "title", "Person": "name"}.
+    Omitting a node label from the options dict will leave the node unlabeled in the visualization.
+    Setting physics = True makes the nodes bounce around when you touch them!
+
+    :param graph: Connection to the DB where the query will be executed.
+    :param options: Options for the Nodes.
+    :param physics: Physics of the vis.js visualization.
+    :param limit: Maximum number of Nodes or Edges.
+    :return: IPython.display.HTML
+    """
+
     query = """
     MATCH (n)
     WITH n, rand() AS random
     ORDER BY random
-    LIMIT {limit}
+    LIMIT $limit
     OPTIONAL MATCH (n)-[r]->(m)
     RETURN n AS source_node,
            id(n) AS source_id,
@@ -83,11 +93,11 @@ def draw(graph, options, physics=False, limit=100):
     edges = []
 
     def get_vis_info(node, id):
-        node_label = list(node.labels())[0]
+        node_label = list(node.labels)[0]
         prop_key = options.get(node_label)
-        vis_label = node.properties.get(prop_key, "")
+        vis_label = node.get(prop_key, "")
 
-        return {"id": id, "label": vis_label, "group": node_label, "title": repr(node.properties)}
+        return {"id": id, "label": vis_label, "group": node_label, "title": repr(node)}
 
     for row in data:
         source_node = row[0]
@@ -107,6 +117,6 @@ def draw(graph, options, physics=False, limit=100):
             if target_info not in nodes:
                 nodes.append(target_info)
 
-            edges.append({"from": source_info["id"], "to": target_info["id"], "label": rel.type()})
+            edges.append({"from": source_info["id"], "to": target_info["id"], "label": rel.__class__.__name__})
 
     return vis_network(nodes, edges, physics=physics)
