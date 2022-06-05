@@ -2,11 +2,11 @@ from bottle import route, run
 
 @route('/')
 def hello():
-    return "Hello World!"
+    return "This is the Recipes Web Service!"
 
-@route('/recipes/')
+@route('/recipes/', method='GET')
 def recipes_list():
-    return "LIST"
+    return "LIST RECIPES"
 
 @route('/recipes/<name>', method='GET')
 def recipe_show( name="Mystery Recipe" ):
